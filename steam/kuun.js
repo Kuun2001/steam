@@ -9,6 +9,8 @@ const getGames = async (callback) => {
     if (!response.ok) {
       throw new Error("HTTP error! status: " + response.status);
     }
+    const gamesData = await response.json();
+    // callback(null, gamesData);
     callback(null, gamesData.data);
   } catch (err) {
     callback(err, null);
